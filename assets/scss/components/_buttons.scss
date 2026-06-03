@@ -1,0 +1,53 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1.8rem;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: all $transition-base;
+}
+
+.btn--solid {
+  background: #fff;
+  border-color: #fff;
+  color: $brand-charcoal;
+
+  &:hover {
+    background: transparent;
+    color: #fff;
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+
+  &:hover {
+    background: #fff;
+    color: $brand-charcoal;
+  }
+}
+
+.btn--outline {
+  border-color: $brand-charcoal;
+
+  &:hover {
+    background: $brand-charcoal;
+    color: #fff;
+  }
+}
+
+.btn--dark {
+  background: $brand-charcoal;
+  border-color: $brand-charcoal;
+  color: #fff;
+
+  &:hover {
+    background: $brand-darker;
+  }
+}
