@@ -17,9 +17,11 @@
     }
 
     const safeCount = Math.max(0, parseInt(count, 10) || 0);
+    const hasFavorites = safeCount > 0;
 
-    headerFavoritesCount.textContent = String(safeCount);
-    headerFavoritesCount.classList.toggle('is-visible', safeCount > 0);
+    headerFavoritesCount.textContent = hasFavorites ? String(safeCount) : '';
+    headerFavoritesCount.classList.toggle('is-visible', hasFavorites);
+    headerFavoritesCount.hidden = !hasFavorites;
   }
 
   function fetchHeaderFavoritesGrid() {
