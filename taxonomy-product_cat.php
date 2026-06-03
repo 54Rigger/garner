@@ -139,7 +139,6 @@ if ($current_term instanceof WP_Term) {
 ?>
 
 <main id="main-content">
-	<h1>I Got Here</h1>
 	<section class="featured-plans" data-purpose="product-category-archive">
 		<div class="container">
 			<nav class="archive-breadcrumb" aria-label="<?php esc_attr_e('Breadcrumb', 'garnernewtheme'); ?>">
