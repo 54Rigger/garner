@@ -36,11 +36,14 @@
     position: relative;
     z-index: 1;
     max-width: 42rem;
+    margin-inline: 0 auto;
+    text-align: left;
+    padding-left: calc(1rem + 2.6rem + 75px);
 
     h1 {
       margin: 0;
       font-family: $font-serif;
-      font-size: clamp(2.2rem, 6vw, 4.7rem);
+      font-size: clamp(1.76rem, 4.8vw, 3.76rem);
       line-height: 0.96;
     }
 
@@ -258,6 +261,8 @@
 }
 
 .plan-card {
+  position: relative;
+
   img {
     width: 100%;
     height: 16rem;
@@ -289,6 +294,77 @@
     letter-spacing: 0.14em;
     border-bottom: 1px solid $brand-charcoal;
     padding-bottom: 0.2rem;
+  }
+}
+
+.favorite-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  display: inline-grid;
+  place-items: center;
+  transition: all $transition-base;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    transition: inherit;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(0, 0, 0, 0.65);
+    border-color: #fff;
+  }
+
+  &.is-active {
+    background: #fff;
+    color: $brand-charcoal;
+    border-color: #fff;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  &.is-loading {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+}
+
+.favorite-toggle--grid {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 2;
+}
+
+.single-product-favorite {
+  margin: 0.8rem 0 1rem;
+}
+
+.favorite-toggle--single {
+  border-color: #1a1a1a;
+  background: #fff;
+  color: #1a1a1a;
+
+  &:hover,
+  &:focus-visible {
+    background: #f0f0ee;
+    border-color: #1a1a1a;
+  }
+
+  &.is-active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
   }
 }
 
@@ -535,6 +611,10 @@
   }
 
   .hero {
+    &__content {
+      padding-left: calc(0.5rem + 2.25rem + 75px);
+    }
+
     &__control {
       width: 2.25rem;
       height: 2.25rem;
