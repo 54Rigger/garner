@@ -1255,17 +1255,25 @@ body.has-floorplans-lightbox-open {
   gap: 0.7rem;
 }
 .social-links a {
-  width: 2rem;
+  width: 2.3125rem;
   aspect-ratio: 1;
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: #232323;
+  background: #B0A593;
   font-size: 0.62rem;
   letter-spacing: 0.08em;
 }
 .social-links a:hover {
-  background: #3a3a3a;
+  background: #B0A593;
+}
+.social-links a svg {
+  width: 2.0625rem;
+  height: 2.0625rem;
+  display: block;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .scroll-to-top {
@@ -1275,7 +1283,7 @@ body.has-floorplans-lightbox-open {
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 999px;
-  background: #1a1a1a;
+  background: #B0A593;
   color: #fff;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
   opacity: 0;

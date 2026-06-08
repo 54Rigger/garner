@@ -25,4 +25,7 @@ foreach ($garnernewtheme_includes as $garnernewtheme_include) {
 		require_once $garnernewtheme_file;
 	}
 }
-add_filter('woocommerce_order_email_verification_required', '__return_false');
+
+//Disable the feature where woocommerce asks to verify email address for guest checkout users. This is because we want to allow users to checkout as guests without creating an account or verifying their email address.
+add_filter('woocommerce_checkout_registration_generate_password', '__return_false');
+add_filter('woocommerce_checkout_registration_email_for_guest', '__return_false');

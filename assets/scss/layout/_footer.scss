@@ -56,22 +56,22 @@
   gap: 0.7rem;
 
   a {
-    width: 2rem;
+    width: 2.3125rem;
     aspect-ratio: 1;
     border-radius: 999px;
     display: grid;
     place-items: center;
-    background: #232323;
+    background: #B0A593;
     font-size: 0.62rem;
     letter-spacing: 0.08em;
 
     &:hover {
-      background: #3a3a3a;
+      background: #B0A593;
     }
 
     svg {
-      width: 0.95rem;
-      height: 0.95rem;
+      width: 2.0625rem;
+      height: 2.0625rem;
       display: block;
       stroke-width: 1.7;
       stroke-linecap: round;
@@ -87,7 +87,7 @@
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 999px;
-  background: $brand-charcoal;
+  background: #B0A593;
   color: #fff;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
   opacity: 0;
