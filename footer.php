@@ -15,9 +15,28 @@
 					<span class="brand-mark__subtitle"><?php esc_html_e( 'Residential Design', 'garnernewtheme' ); ?></span>
 				</div>
 				<div class="social-links">
-					<a href="<?php echo esc_url( get_theme_mod( 'social_instagram_url', '#' ) ); ?>" aria-label="Instagram">IG</a>
-					<a href="<?php echo esc_url( get_theme_mod( 'social_facebook_url', '#' ) ); ?>" aria-label="Facebook">FB</a>
-					<a href="<?php echo esc_url( get_theme_mod( 'social_pinterest_url', '#' ) ); ?>" aria-label="Pinterest">PI</a>
+					<?php
+					$social_networks = garnernewtheme_get_social_networks();
+					$social_order    = garnernewtheme_get_social_ordered_networks();
+
+					foreach ($social_order as $network_slug) {
+						if (! isset($social_networks[$network_slug])) {
+							continue;
+						}
+
+						$url  = trim((string) get_theme_mod('social_' . $network_slug . '_url', ''));
+						$icon = garnernewtheme_get_social_icon_svg($network_slug);
+
+						if ('' === $url || '' === $icon) {
+							continue;
+						}
+						?>
+						<a href="<?php echo esc_url($url); ?>" aria-label="<?php echo esc_attr($social_networks[$network_slug]); ?>" target="_blank" rel="noopener noreferrer">
+							<?php echo $icon; ?>
+						</a>
+						<?php
+					}
+					?>
 				</div>
 			</div>
 

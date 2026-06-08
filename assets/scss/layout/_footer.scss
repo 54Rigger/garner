@@ -68,6 +68,15 @@
     &:hover {
       background: #3a3a3a;
     }
+
+    svg {
+      width: 0.95rem;
+      height: 0.95rem;
+      display: block;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
   }
 }
 

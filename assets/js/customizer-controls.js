@@ -89,5 +89,31 @@
         renderPreview($control, []);
       });
     });
+
+    $('.customize-control-garnernewtheme_social_order').each(function () {
+      var $control = $(this);
+      var $list = $control.find('.garner-social-order-list');
+      var $input = $control.find('.garner-social-order-input');
+
+      if (!$list.length || !$input.length || typeof $list.sortable !== 'function') {
+        return;
+      }
+
+      $list.sortable({
+        items: '.garner-social-order-item',
+        axis: 'y',
+        update: function () {
+          var order = $list
+            .find('.garner-social-order-item')
+            .map(function () {
+              return $(this).data('network');
+            })
+            .get()
+            .join(',');
+
+          $input.val(order).trigger('change');
+        }
+      });
+    });
   });
 })(jQuery);
