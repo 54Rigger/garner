@@ -147,7 +147,9 @@ $shop_category_terms = get_terms(
 					<p class="section-subtitle"><?php echo esc_html(wp_strip_all_tags($shop_description)); ?></p>
 				<?php endif; ?>
 			</header>
-
+			<?php if (function_exists('garner_acff_render_filters')) {
+				echo garner_acff_render_filters();
+			} ?>
 			<div class="cards-4">
 				<?php if (have_posts()) : ?>
 					<?php while (have_posts()) : ?>

@@ -106,6 +106,10 @@ $products_query = new WP_Query(
 				<?php endif; ?>
 			</header>
 
+			<?php if (function_exists('garner_acff_render_filters')) {
+				echo garner_acff_render_filters();
+			} ?>
+
 			<div class="cards-4">
 				<?php if ($products_query->have_posts()) : ?>
 					<?php while ($products_query->have_posts()) : ?>

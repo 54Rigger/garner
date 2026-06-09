@@ -108,6 +108,10 @@ $featured_products_query = new WP_Query(
 				<p class="section-subtitle"><?php esc_html_e('A curated archive view of our currently featured products.', 'garnernewtheme'); ?></p>
 			</header>
 
+			<?php if (function_exists('garner_acff_render_filters')) {
+				echo garner_acff_render_filters();
+			} ?>
+
 			<div class="cards-4">
 				<?php if ($featured_products_query->have_posts()) : ?>
 					<?php while ($featured_products_query->have_posts()) : ?>
