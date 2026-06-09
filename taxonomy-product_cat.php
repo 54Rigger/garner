@@ -231,13 +231,15 @@ if ($current_term instanceof WP_Term) {
 						?>
 						<article class="plan-card">
 							<?php echo garnernewtheme_render_favorite_button($product_id, 'grid'); ?>
-							<img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+							<a class="plan-card__media" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr(sprintf(__('View %s', 'garnernewtheme'), get_the_title())); ?>">
+								<img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+							</a>
 							<div>
-								<h3><?php the_title(); ?></h3>
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<?php if (! empty($specs)) : ?>
 									<p><?php echo esc_html(implode(' | ', $specs)); ?></p>
 								<?php endif; ?>
-								<a href="<?php the_permalink(); ?>"><?php esc_html_e('View Plan', 'garnernewtheme'); ?></a>
+								<a class="plan-card__cta" href="<?php the_permalink(); ?>"><?php esc_html_e('View Plan', 'garnernewtheme'); ?></a>
 							</div>
 						</article>
 					<?php endwhile; ?>
@@ -258,8 +260,8 @@ if ($current_term instanceof WP_Term) {
 					the_posts_pagination(
 						array(
 							'mid_size'           => 1,
-							'prev_text'          => __('Previous', 'garnernewtheme'),
-							'next_text'          => __('Next', 'garnernewtheme'),
+							'prev_text'          => '&#171;',
+							'next_text'          => '&#187;',
 							'screen_reader_text' => __('Products navigation', 'garnernewtheme'),
 						)
 					);

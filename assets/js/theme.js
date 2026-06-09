@@ -11,6 +11,37 @@
   const headerFavoritesCount = document.querySelector('[data-header-favorites-count]');
   const favoritesConfig = window.garnernewthemeFavorites || null;
 
+  function ensurePlanCardMediaLinks() {
+    const cards = Array.from(document.querySelectorAll('.plan-card'));
+
+    cards.forEach(function (card) {
+      const mediaLink = card.querySelector(':scope > a.plan-card__media');
+      const image = card.querySelector(':scope > img');
+      const cta = card.querySelector(':scope > div a[href]');
+
+      if (mediaLink || !image || !cta) {
+        return;
+      }
+
+      const href = cta.getAttribute('href');
+      if (!href) {
+        return;
+      }
+
+      const link = document.createElement('a');
+      link.className = 'plan-card__media';
+      link.href = href;
+
+      const ctaLabel = (cta.textContent || '').trim();
+      if (ctaLabel) {
+        link.setAttribute('aria-label', ctaLabel);
+      }
+
+      image.parentNode.insertBefore(link, image);
+      link.appendChild(image);
+    });
+  }
+
   function setHeaderFavoritesCount(count) {
     if (!headerFavoritesCount) {
       return;
@@ -67,6 +98,8 @@
       menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   }
+
+  ensurePlanCardMediaLinks();
 
   if (scrollBtn) {
     window.addEventListener('scroll', function () {

@@ -188,8 +188,8 @@ $featured_products_query = new WP_Query(
 						array(
 							'total'     => (int) $featured_products_query->max_num_pages,
 							'current'   => $paged,
-							'prev_text' => __('Previous', 'garnernewtheme'),
-							'next_text' => __('Next', 'garnernewtheme'),
+							'prev_text' => '&#171;',
+							'next_text' => '&#187;',
 						)
 					);
 					?>

@@ -196,7 +196,58 @@
 
 .section-cta-wrap {
   margin-top: 2.1rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.section-cta-wrap .page-numbers,
+.pagination .page-numbers {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid #a6a6a6;
+  border-radius: 0.3rem;
+  background: #f3f3f3;
+  color: $brand-charcoal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.section-cta-wrap a.page-numbers:hover,
+.pagination a.page-numbers:hover,
+.section-cta-wrap a.page-numbers:focus-visible,
+.pagination a.page-numbers:focus-visible {
+  background: #e9e9e9;
+  border-color: #9a9a9a;
+}
+
+.section-cta-wrap .page-numbers.current,
+.pagination .page-numbers.current {
+  background: #B0A593;
+  border-color: #B0A593;
+  color: #fff;
+}
+
+.section-cta-wrap span.page-numbers:not(.current):not(.dots),
+.pagination span.page-numbers:not(.current):not(.dots) {
+  opacity: 0.55;
+}
+
+.pagination .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .categories {
@@ -263,6 +314,13 @@
 .plan-card {
   position: relative;
 
+  &__media {
+    display: block;
+    border: 0;
+    padding: 0;
+    line-height: 0;
+  }
+
   img {
     width: 100%;
     height: 16rem;
@@ -278,6 +336,15 @@
     margin: 0;
     font-family: $font-serif;
     font-size: 1.3rem;
+
+    a {
+      border: 0;
+      padding: 0;
+      letter-spacing: normal;
+      text-transform: none;
+      font-size: inherit;
+      line-height: inherit;
+    }
   }
 
   p {
@@ -288,7 +355,7 @@
     color: $text-light;
   }
 
-  a {
+  &__cta {
     font-size: 0.66rem;
     text-transform: uppercase;
     letter-spacing: 0.14em;
