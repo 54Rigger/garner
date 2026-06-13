@@ -63,6 +63,6 @@ function display_custom_text_after_addons()
 {
 	echo '<div class="custom-addons-text">';
 	echo '<h3>Not Sure Which Option Is Right for You? </h3>';
-	echo '<p>Need help choosing the best file type or license for your project? View our detailed Format & Licensing Guide <a href="[linked to pricing page]">here</a> or <a href="mailto:[email address]">contact us</a> for assistance.</p>';
+	echo '<p>Need help choosing the best file type or license for your project? View our detailed Format & Licensing Guide <a href="/pricing">here</a> or <a href="mailto:elizabeth@garnerdrake.com">contact us</a> for assistance.</p>';
 	echo '</div>';
 }
