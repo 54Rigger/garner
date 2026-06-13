@@ -36,7 +36,7 @@ add_filter('woocommerce_get_price_html', 'woo_add_text_under_price', 10, 2);
 function woo_add_text_under_price($price,)
 {
 	// Add your custom text or HTML below the price
-	$custom_text = '<div class="custom-price-text" style="font-size: 0.9em; color: #666;">
+	$custom_text = '<div class="custom-price-text">
 			<h3>PDF – Single Build</h3>
 			<p>Complete printable PDF construction drawings with permission to build the design one time. Ideal for homeowners, builders, or developers constructing a single project.</p>
 			</div>';
