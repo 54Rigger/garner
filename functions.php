@@ -51,3 +51,9 @@ function customize_product_summary()
 	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
 	add_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 7);
 }
+//remove the quantity field from the product page. This is to prevent customers from adding multiple quantities of the same product to their cart, which can help reduce cart abandonment and increase conversions.
+add_filter('woocommerce_is_sold_individually', 'custom_remove_all_quantity_fields', 10, 2);
+function custom_remove_all_quantity_fields($return, $product)
+{
+	return true;
+}
