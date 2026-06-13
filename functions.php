@@ -57,3 +57,12 @@ function custom_remove_all_quantity_fields($return, $product)
 {
 	return true;
 }
+
+add_action('woocommerce_product_addons_end', 'display_custom_text_after_addons', 10);
+function display_custom_text_after_addons()
+{
+	echo '<div class="custom-addons-text">';
+	echo '<h3>Not Sure Which Option Is Right for You? </h3>';
+	echo '<p>Need help choosing the best file type or license for your project? View our detailed Format & Licensing Guide <a href="[linked to pricing page]">here</a> or <a href="mailto:[email address]">contact us</a> for assistance.</p>';
+	echo '</div>';
+}
